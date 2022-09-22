@@ -19,5 +19,7 @@ from main import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('about_us/', views.about_us),
-    path('date_now/', views.date_now)
+    path('date_now/', views.date_now),
+    path('film/', views.film_list_view),
+    path('film/<int:id>/', views.film_item_view)
 ]
