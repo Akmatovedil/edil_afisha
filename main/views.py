@@ -1,5 +1,5 @@
 from django.shortcuts import render, HttpResponse, Http404
-from main.models import Film
+from main.models import Film, Review
 from datetime import datetime
 
 # Create your views here.
@@ -26,6 +26,7 @@ def film_item_view(request, id):
     except Film.DoesNotExist:
         raise Http404 ('Film not found')
     context = {
-        'film_detail': film_list
+        'film_detail': film_list,
+        'reviews': Review.objects.filter(film_id = id)
     }
     return render(request, 'detail.html', context=context)

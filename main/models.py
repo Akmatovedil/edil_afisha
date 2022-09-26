@@ -15,3 +15,11 @@ class Film (models.Model):
 
     def __str__(self):
         return self.name
+
+
+class Review (models.Model):
+    film = models.ForeignKey(Film, on_delete=models.CASCADE, null=True)
+    text = models.TextField()
+
+    def __str__(self):
+        return self.text

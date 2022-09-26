@@ -11,6 +11,9 @@
 <p> Рейтинг - {{ film_detail.rating }}</p>
 <p> Длительность - {{ film_detail.duration }} мин </p>
 <hr/>
-
+<h2>Reviews</h2>
+{% for i in reviews %}
+    <p>{{ i.text }}</p>
+{% endfor %}
 </body>
 </html>
